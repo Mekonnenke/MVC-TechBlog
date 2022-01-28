@@ -9,7 +9,8 @@ class User extends Model {
     // }
 }
 
-User.init({ 
+User.init(
+    { 
     // define an id column
     id: {
         
@@ -26,10 +27,10 @@ User.init({
       // define a password column
     password: {
         type: DataTypes.STRING,
-    //     allowNull: false,
-    //     validate: {
-    //         len: [6]
-    //     }
+        allowNull: false,
+        validate: {
+            len: [6]
+        }
      }
 }, {
     // hooks: {
