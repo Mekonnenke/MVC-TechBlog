@@ -4,7 +4,8 @@ const sequelize = require('../config/connection');
 
 class Comment extends Model {}
 
-Comment.init({
+Comment.init(
+    {
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -20,19 +21,17 @@ Comment.init({
     },
     user_id: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'user',
-            key: 'id'
-        }
+        // references: {
+        //     model: 'user',
+        //     key: 'id'
+        // }
     },
     post_id: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'post',
-            key: 'id'
-        }
+        //references: {
+        //     model: 'post',
+        //     key: 'id'
+        // }
     }
 }, {
     sequelize,
@@ -43,3 +42,6 @@ Comment.init({
 
 
 module.exports = Comment;
+
+// ALTER TABLE Comment 
+// DROP FOREIGN KEY FK_Post; 

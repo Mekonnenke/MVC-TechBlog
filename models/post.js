@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 
 class Post extends Model {}
-
+    
 Post.init({
     id: {
         type: DataTypes.INTEGER,
@@ -14,13 +14,11 @@ Post.init({
     title: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate: {
-            len: [1]
-        }
+       
     },
     content: {
         type: DataTypes.STRING,
-        allowNull: false,
+       // allowNull: false,
         validate: {
             len: [1]
         }
@@ -41,3 +39,22 @@ Post.init({
 
 
 module.exports = Post;
+
+
+// CREATE TABLE post (
+//     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+//     content VARCHAR(30),
+//     user_id INT,
+//    FOREIGN KEY (department_id) REFERENCES department(id)
+//   );
+
+//  INSERT INTO post
+// (title, content, user_id)
+// VALUES
+// ("Shirts", "Shorts blow dddd", "3")
+
+// ALTER TABLE Post
+// ALTER Content DROP DEFAULT;
+
+// ALTER TABLE Post
+// ALTER Content SET DEFAULT 'textInput';
